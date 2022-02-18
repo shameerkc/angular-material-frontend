@@ -1,3 +1,8 @@
+# References
+
+- [Setting up HTTP](https://www.techiediaries.com/angular-12-tutorial-example-rest-crud-http-get-httpclient/)
+- [Login Page using Material](https://code.tutsplus.com/tutorials/how-to-build-a-login-and-registration-ui-with-angular-and-material-design--cms-31794)
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
@@ -25,3 +30,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+# Running JSON Fake Server
+We have setup the server command in package.json file. Execute the below command:
+
+`npm run server`
