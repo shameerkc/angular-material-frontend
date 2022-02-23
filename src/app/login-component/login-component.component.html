@@ -1,16 +1,22 @@
 <mat-card class="login-card">
     <mat-toolbar class="login-title">
-        <span>Login to System</span>
+        <span>Developer Console Login</span>
     </mat-toolbar>
     <mat-card-content>
         <form class="my-form">
             <mat-form-field class="full-width">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="Email" name="email">
+                <input matInput [formControl]="emailFormControl" placeholder="Email" name="email" type="email">
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
             </mat-form-field>
             <mat-form-field class="full-width">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Password" name="password">
+                <input matInput placeholder="Password" name="password" type="password">
             </mat-form-field>
         </form>
     </mat-card-content>

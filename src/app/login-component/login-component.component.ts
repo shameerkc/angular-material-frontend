@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { LoginService } from '../login.service';
 
 @Component({
@@ -7,6 +8,8 @@ import { LoginService } from '../login.service';
   styleUrls: ['./login-component.component.css']
 })
 export class LoginComponentComponent implements OnInit {
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+
 
   constructor(private loginService: LoginService) { }
 
@@ -16,10 +19,7 @@ export class LoginComponentComponent implements OnInit {
   loginUserData = [];
 
   login(): void {
-    this.loginService.sendGetRequest().subscribe(
-      (data: any) =>
-        this.loginUserData = data
-    );
+    this.loginService.getLoginUser();
   }
 
 

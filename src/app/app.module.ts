@@ -1,16 +1,21 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CpuComponent } from './cpu/cpu.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { MyMaterialModule } from './material.module';
 import { RegistrationComponentComponent } from './registration-component/registration-component.component';
+import { UserManagementComponent } from './user-management/user-management.component';
+import { VolumeComponent } from './volume/volume.component';
 
 
 
@@ -24,17 +29,21 @@ import { RegistrationComponentComponent } from './registration-component/registr
   imports: [
     MatButtonModule,
     MatToolbarModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSidenavModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MyMaterialModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: '/', pathMatch: 'full' },
+      { path: '', redirectTo: '/login', pathMatch: 'full' },
       { path: 'register', component: RegistrationComponentComponent },
       { path: 'login', component: LoginComponentComponent },
-
-
+      { path: 'volume', component: VolumeComponent },
+      { path: 'cpu', component: CpuComponent },
+      { path: 'users', component: UserManagementComponent }
     ]),
   ],
   providers: [],
