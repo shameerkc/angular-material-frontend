@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { catchError, throwError } from 'rxjs';
 import { LoginUser } from './loginuser';
 
 @Injectable({
@@ -20,8 +20,8 @@ export class LoginService {
     return this.httpClient.get(this.REST_API_SERVER);
   }
 
-  public getLoginUser() {
-    this.getLoginUserData().subscribe(
+  public getLoginUser(emailAddress: string, password: string) {
+    this.getLoginUserData(emailAddress, password).subscribe(
       (data: LoginUser) => {
         this.isAuthenticated = true;
         this.loginUsername = data.name;
@@ -29,8 +29,13 @@ export class LoginService {
     );
   }
 
-  getLoginUserData() {
-    return this.httpClient.get<LoginUser>(this.REST_API_SERVER)
+  getLoginUserData(emailAddress: string, password: string) {
+    return this.httpClient.get<LoginUser>(this.REST_API_SERVER, {
+      params: {
+        userId: emailAddress,
+        pwd: password
+      }
+    })
       .pipe(
         catchError(this.handleError)
       );

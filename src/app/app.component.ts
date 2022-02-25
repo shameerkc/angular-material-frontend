@@ -33,7 +33,10 @@ export class AppComponent {
   }
 
   ngAfterViewInit(): void {
+  }
 
+  logoutUser(): void {
+    this.loginService.isAuthenticated = false;
   }
 
   //shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);

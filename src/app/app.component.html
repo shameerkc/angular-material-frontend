@@ -4,25 +4,19 @@
             <button mat-icon-button (click)="snav.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>
-            <!--  <span>HOME</span> -->
+            <!--  
             <span>
                 <button mat-mini-fab color="primary" href="/" aria-label="Login">
                     <mat-icon>home</mat-icon>
                 </button>
-                <!--
-      <a href="/">Welcome Home</a> -->
-
             </span>
             <span></span>
-            <span>Welcome Home</span>
+        -->
+            <span>Developer Console</span>
             <span class="spacer"></span>
             <span>Welcome {{loginUser.name}}</span>
-            <span class="spacer"></span>
-            <button mat-mini-fab color="primary" routerLink="/register" aria-label="Login">
-                <mat-icon>app_registration</mat-icon>
-            </button>
-            <button mat-mini-fab color="primary" routerLink="/login" aria-label="Login">
-                <mat-icon>login</mat-icon>
+            <button mat-mini-fab color="primary" (click)="logoutUser()" aria-label="Login">
+                <mat-icon>logout</mat-icon>
             </button>
         </mat-toolbar-row>
     </mat-toolbar>
