@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../login.service';
 
 @Component({
@@ -8,9 +8,14 @@ import { LoginService } from '../login.service';
   styleUrls: ['./login-component.component.css']
 })
 export class LoginComponentComponent implements OnInit {
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   emailAddress: string = '';
   password: string = '';
+
+  loginForm: FormGroup = new FormGroup(
+    {
+      emailFormControl: new FormControl('', [Validators.required, Validators.email]),
+      passwordControl: new FormControl('', [Validators.required])
+    });
 
 
   constructor(public loginService: LoginService) { }
@@ -21,9 +26,10 @@ export class LoginComponentComponent implements OnInit {
   loginUserData = [];
 
   login(): void {
-    this.loginService.getLoginUser(this.emailAddress, this.password);
+    if (this.loginForm.valid) {
+      this.loginService.getLoginUser(this.emailAddress, this.password);
+    } else {
+      console.log("Login form validation failed.");
+    }
   }
-
-
-
 }

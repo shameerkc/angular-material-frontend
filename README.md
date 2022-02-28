@@ -1,7 +1,8 @@
 # References
 
 - [Setting up HTTP](https://www.techiediaries.com/angular-12-tutorial-example-rest-crud-http-get-httpclient/)
-- [Login Page using Material](https://code.tutsplus.com/tutorials/how-to-build-a-login-and-registration-ui-with-angular-and-material-design--cms-31794)
+- [Login Page using Material](https://code.tutsplus.com/tutorials/how-to-build-a-login-and-registration-ui-with-angular-and-material-design--cms-31794)-
+- [Data Table with Angular](https://blog.angular-university.io/angular-material-data-table/)
 
 # Frontend
 
