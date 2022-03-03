@@ -16,10 +16,6 @@ export class LoginService {
     private httpClient: HttpClient
   ) { }
 
-  public sendGetRequest() {
-    return this.httpClient.get(this.REST_API_SERVER);
-  }
-
   public getLoginUser(emailAddress: string, password: string) {
     this.getLoginUserData(emailAddress, password).subscribe(
       (data: LoginUser) => {

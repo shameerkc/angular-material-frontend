@@ -1,3 +1,4 @@
+import { CdkTableModule } from '@angular/cdk/table';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,9 +11,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
-
 
 @NgModule({
     imports: [MatNativeDateModule,
@@ -21,12 +22,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
         MatButtonModule,
         MatCheckboxModule,
         MatToolbarModule,
+        MatTableModule,
+        CdkTableModule,
         FormsModule,
         MatCardModule,
         MatFormFieldModule,
         MatInputModule,
         MatListModule,
-        MatRadioModule,],
+        MatRadioModule,
+        MatSidenavModule],
 
     exports: [MatNativeDateModule,
         FormsModule,
@@ -36,10 +40,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
         MatCheckboxModule,
         MatToolbarModule,
         MatCardModule,
+        MatTableModule,
+        CdkTableModule,
         MatFormFieldModule,
         MatInputModule,
         MatListModule,
-        MatRadioModule,],
+        MatRadioModule,
+        MatSidenavModule],
 
 })
 

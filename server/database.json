@@ -16,5 +16,24 @@
     "login": {
         "userID": 1234,
         "userName": "Shameer"
-    }
+    },
+    "volume": [{
+            "name": "Volume 1",
+            "id": "Volume_1",
+            "usedVolume": 50,
+            "availableVolume": 200
+        },
+        {
+            "name": "Volume 2",
+            "id": "Volume_2",
+            "usedVolume": 90,
+            "availableVolume": 300
+        },
+        {
+            "name": "Volume 3",
+            "id": "Volume_3",
+            "usedVolume": 550,
+            "availableVolume": 100
+        }
+    ]
 }
